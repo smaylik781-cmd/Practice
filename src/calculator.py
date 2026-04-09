@@ -11,4 +11,4 @@ def divide(a: float, b: float) -> float:
     if b == 0:
         raise ValueError("Division by zero")
     return a / b
-    # Это очень длинная строка, которая специально создана, чтобы нарушить правило длины строки в сто символов и сломать пайплайн
+    UNUSED_VARIABLE = "This_is_a_very_long_string_that_will_cause_pylint_to_fail_and_lower_the_score_below_threshold"

@@ -1,0 +1,8 @@
+[FORMAT]
+max-line-length=100
+
+[BASIC]
+fail-under=7.0
+
+[MESSAGES CONTROL]
+disable=missing-module-docstring,missing-function-docstring

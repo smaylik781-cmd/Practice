@@ -1,0 +1,22 @@
+name: Quality Pipeline
+on: [push, pull_request]
+
+jobs:
+  quality-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deps
+        run: pip install -r requirements.txt
+      - name: Lint
+        run: pylint --rcfile=.pylintrc src/ || exit 1
+      - name: Tests + Coverage
+        run: pytest tests/ --cov=src --cov-report=html --cov-fail-under=70
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: htmlcov/

@@ -2,15 +2,9 @@
 max-line-length=100
 
 [BASIC]
+# Если оценка будет ниже 7.0, линтер вернет ошибку
 fail-under=7.0
 
 [MESSAGES CONTROL]
+# Отключаем только требования к документации, чтобы не мешали
 disable=missing-module-docstring,missing-function-docstring
-[FORMAT]
-max-line-length=100
-# Включаем проверку длины комментариев
-ignore-long-lines=^\s*(# )?<?https?://\S+>?$
-
-[MESSAGES CONTROL]
-# Убедитесь, что C0301 (line-too-long) НЕ отключен
-enable=line-too-long
